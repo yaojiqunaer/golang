@@ -1,8 +1,6 @@
-package var
+package main
 
-import {
-	"fmt"
-}
+import "fmt"
 /*
   # 变量声明
 */
@@ -10,23 +8,23 @@ func main() {
 
 	//申明变量 不赋值默认为0
 	var a int
-	fmt.Println("a = " + a)
+	fmt.Println("a = ", a)
 
 	//申明变量  b赋值
-	var b int = 100
-	fmt.Println("b = " + b)
+	var b int = 100		
+	fmt.Println("b = ", b)
 
 	//声明变量 自动推断类型
 	var c = 200
-	fmt.Println("c = " + c)
+	fmt.Println("c = ", c)
 
 	//省略var
 	e := 900
-	fmt.Println("e = " + e)
+	fmt.Println("e = ", e)
 
 	//多个变量
 	var name, age = "zhangsan", 20
-	fmt.Println("name: " + name, "age: " + age)
+	fmt.Println("name: " + name, "age: ", age)
 
 	//多行多变量
 	var (
@@ -34,7 +32,5 @@ func main() {
 		hight string = "2.334m"
 		isGirl bool = true
 	)
-	fmt.Println("id: " + id, "isGirl: " + isGirl)
-	
-
+	fmt.Println("id: ", id, "hight: ", hight, "isGirl: ", isGirl)
 }
