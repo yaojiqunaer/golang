@@ -8,8 +8,6 @@
 
 ## 安装Go语言环境
 
-参考文档：[安装Go语言及搭建Go语言开发环境](https://www.cnblogs.com/aaronthon/p/10587487.html)
-
 ### 下载
 Go官网下载地址：[Downloads - The Go Programming Language](https://golang.google.cn/dl/)
 
@@ -70,4 +68,54 @@ GOPATH表示后续开发存放代码/二进制文件/缓存文件的工作空间
 打开cmd命令行，输入go version指令测试
 
 ![image-20220223010030906](https://s2.loli.net/2022/02/23/6frd2EnTl9GHyJN.png)
+
+### 第一个GO程序
+
+1. 在GOPATH的src目录下建议helloword目录（项目名），并创建main.go文件
+
+```go
+// 声明 main 包，表明当前是一个可执行程序
+package main
+// 导入GO内置 fmt 函数库
+import "fmt"
+// main函数，是程序执行的入口
+func main(){
+    // 在终端打印 Hello World!
+    fmt.Println("Hello World!")
+}
+```
+
+2. 在helloword目录下运行`go build`命令
+
+高版本会报错，提示模块未找到
+运行报错
+```bash
+D:\Program Files (x86)\GoProjects\src\helloword>go build
+go: go.mod file not found in current directory or any parent directory; see 'go help modules'
+```
+
+解决办法：执行 `go env -w GO111MODULE=auto` 命令
+
+```bash
+# 开启 go modules 功能
+D:\Program Files (x86)\GoProjects\src\helloword>go env -w GO111MODULE=auto
+```
+
+运行`go build`命令后，go会将源代码编译成可执行文件helloword.exe (windows下)，可以在hellword目录看到
+
+3. 运行helloword.exe
+
+```
+D:\Program Files (x86)\GoProjects\src\helloword>go build
+D:\Program Files (x86)\GoProjects\src\helloword>helloword.exe
+Hello World!
+```
+
+### 参考文档
+
+> [安装Go语言及搭建Go语言开发环境](https://www.cnblogs.com/aaronthon/p/10587487.html)
+>
+> [Go语言中文文档](https://www.topgoer.com/)
+>
+> [Go语言中文网](http://books.studygolang.com/)
 
