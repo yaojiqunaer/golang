@@ -94,11 +94,13 @@ D:\Program Files (x86)\GoProjects\src\helloword>go build
 go: go.mod file not found in current directory or any parent directory; see 'go help modules'
 ```
 
-解决办法：执行 `go env -w GO111MODULE=auto` 命令
+解决办法：执行 `go env -w GO111MODULE=on` 命令
 
 ```bash
-# 开启 go modules 功能
-D:\Program Files (x86)\GoProjects\src\helloword>go env -w GO111MODULE=auto
+# 开启 go modules 功能 go1.11后需要在工程增加go.mod文件开启依赖包（版本）管理，否则默认无版本管控
+D:\Program Files (x86)\GoProjects\src\helloword>go env -w GO111MODULE=on
+# 阿里云镜像站 方便下载包
+D:\Program Files (x86)\GoProjects\src\helloword>go env -w GOPROXY=https://mirrors.aliyun.com/goproxy/
 ```
 
 运行`go build`命令后，go会将源代码编译成可执行文件helloword.exe (windows下)，可以在hellword目录看到
